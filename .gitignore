@@ -1,0 +1,64 @@
+# ─────────────────────────────────────────────────────────────
+# Auth Sentinel — .gitignore
+# Objetivo: NENHUM dado sensível (credenciais, relatórios, inputs)
+# ou segredo (tokens/API keys) deve chegar ao repositório.
+# ─────────────────────────────────────────────────────────────
+
+# === Segredos / configuração local ===
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets.*
+
+# === Dados sensíveis: entradas de credenciais ===
+# Tudo dentro de input/, exceto o modelo de exemplo
+input/*
+!input/exemplo.csv
+
+# === Dados sensíveis: relatórios e saídas ===
+# Relatórios de auditoria contêm login/senha/host em texto puro
+relatorio*
+relatório*
+report*
+auditoria*
+validator*.csv
+validator*.txt
+teste*.csv
+teste*.txt
+
+# Qualquer CSV/TXT na raiz (saídas geradas) — libere explicitamente se precisar
+/*.csv
+/*.txt
+!requirements.txt
+
+# === Python ===
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# === Ambientes virtuais ===
+venv/
+ven/
+env/
+.venv/
+
+# === Playwright ===
+playwright-report/
+test-results/
+.playwright/
+
+# === IDE / SO ===
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# === Logs ===
+*.log
